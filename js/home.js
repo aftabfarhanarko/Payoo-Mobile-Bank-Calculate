@@ -62,21 +62,26 @@ document
   });
 
 // Send-money-btn
-document.getElementById('Send-money-btn')
-.addEventListener('click', function (e) {
-  e.preventDefault();
-  let userpins = 1234;
+document
+  .getElementById("Send-money-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    let userpins = 1234;
 
-  let userInputValue = document.getElementById('user-account').value;
+    let userInputValue = document.getElementById("user-account").value;
 
-  let sendMonyAmount = parseInt(document.getElementById('transfer-amount').value);
-  let transferPin = parseInt(document.getElementById('transfer-pin').value);
+    let sendMonyAmount = parseInt(
+      document.getElementById("transfer-amount").value
+    );
+    let transferPin = parseInt(document.getElementById("transfer-pin").value);
 
-  let blanceValues = parseInt(document.getElementById('current-blance').innerText);
+    let blanceValues = parseInt(
+      document.getElementById("current-blance").innerText
+    );
 
-  let totalTransferMonet = blanceValues - sendMonyAmount;
+    let totalTransferMonet = blanceValues - sendMonyAmount;
 
-  if (userInputValue.length < 11) {
+    if (userInputValue.length < 11) {
       alert("Please Enter 11 Diget User Number");
       return;
     }
@@ -85,88 +90,115 @@ document.getElementById('Send-money-btn')
       alert("Please Enter valid Transfer  Pin ");
       return;
     }
-  document.getElementById('current-blance').innerText = totalTransferMonet;
-
-})
-
+    document.getElementById("current-blance").innerText = totalTransferMonet;
+  });
 
 // Get-Coupone-btn
-document.getElementById('get-bonus-btn')
-.addEventListener('click', function (e) {
-  e.preventDefault();
+document
+  .getElementById("get-bonus-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
 
-  let couponValue = 1234567890;
-  let couponBunas = 5000;
+    let couponValue = 1234567890;
+    let couponBunas = 5000;
 
-   let blanceCoupon = parseInt(document.getElementById('current-blance').innerText);
+    let blanceCoupon = parseInt(
+      document.getElementById("current-blance").innerText
+    );
 
-  let cuarentinput = parseInt(document.getElementById('bonus-coupon').value);
+    let cuarentinput = parseInt(document.getElementById("bonus-coupon").value);
 
-  let addesa = blanceCoupon + couponBunas;
-  if(cuarentinput === couponValue){
-    document.getElementById('current-blance').innerText = addesa;
-  }else{
-    alert('Your Coupon Number Not Valid');
-  }
+    let addesa = blanceCoupon + couponBunas;
+    if (cuarentinput === couponValue) {
+      document.getElementById("current-blance").innerText = addesa;
+    } else {
+      alert("Your Coupon Number Not Valid");
+    }
 
-  // console.log(cuarentinput,blanceCoupon);
-})
+    // console.log(cuarentinput,blanceCoupon);
+  });
 
+// Pay Bill Event
+document
+  .getElementById("pay-biles-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    let pinesaBillPays = 1234;
+    let billAccountNumber = document.getElementById("bills-account").value;
 
+    let payBillesa = parseInt(document.getElementById("pays-amount").value);
 
+    let billPinNumber = parseInt(document.getElementById("bill-pay-pin").value);
+
+    if (billAccountNumber.length < 11 || billAccountNumber.length > 11) {
+      
+      alert("Please Enter 11 Diget Account Number");
+      return;
+    }
+
+    if (billPinNumber !== pinesaBillPays) {
+      alert("Please Enter valid Pay Pin ");
+      return;
+    }
+    let CurrentsValues = parseInt(
+      document.getElementById("current-blance").innerText
+    );
+
+    let totalPayBill = CurrentsValues - payBillesa;
+    document.getElementById("current-blance").innerText = totalPayBill;
+    // console.log(totalPayBill);
+  });
 
 //  Taggole Menu--1
 document
   .getElementById("add-mony-prent")
   .addEventListener("click", function () {
-    document.getElementById('add-mony-prent').style.borderColor = "#0874F2";
+    document.getElementById("add-mony-prent").style.borderColor = "#0874F2";
     document.getElementById("casOutsection").style.display = "none";
     document.getElementById("transfer-money").style.display = "none";
-    document.getElementById("get-bonus-section").style.display ="none";
-    document.getElementById("payBillSection").style.display ="none";
+    document.getElementById("get-bonus-section").style.display = "none";
+    document.getElementById("payBillSection").style.display = "none";
     document.getElementById("monySection").style.display = "block";
-
   });
 
 //  Taggole Menu--2
-document.getElementById("cas-out-prent").addEventListener("click", function (e) {
-  e.preventDefault();
-  document.getElementById("transfer-money").style.display = "none";
-     document.getElementById("monySection").style.display = "none";
-     document.getElementById("get-bonus-section").style.display ="none";
-       document.getElementById("payBillSection").style.display ="none";
-   document.getElementById("casOutsection").style.display = "block";
-});
+document
+  .getElementById("cas-out-prent")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    document.getElementById("transfer-money").style.display = "none";
+    document.getElementById("monySection").style.display = "none";
+    document.getElementById("get-bonus-section").style.display = "none";
+    document.getElementById("payBillSection").style.display = "none";
+    document.getElementById("casOutsection").style.display = "block";
+  });
 
 //  Taggole Menu--3
-document.getElementById('transr-money')
- .addEventListener('click', function (e) {
+document.getElementById("transr-money").addEventListener("click", function (e) {
   e.preventDefault();
-   document.getElementById("monySection").style.display = "none";
-   document.getElementById("casOutsection").style.display = "none";
-   document.getElementById("get-bonus-section").style.display ="none";
-     document.getElementById("payBillSection").style.display ="none";
-   document.getElementById("transfer-money").style.display ="block";
- })
+  document.getElementById("monySection").style.display = "none";
+  document.getElementById("casOutsection").style.display = "none";
+  document.getElementById("get-bonus-section").style.display = "none";
+  document.getElementById("payBillSection").style.display = "none";
+  document.getElementById("transfer-money").style.display = "block";
+});
 
 //  Taggole Menu--4
-document.getElementById('get-bonus')
- .addEventListener('click', function (e) {
+document.getElementById("get-bonus").addEventListener("click", function (e) {
   e.preventDefault();
-   document.getElementById("monySection").style.display = "none";
-   document.getElementById("casOutsection").style.display = "none";
-   document.getElementById("transfer-money").style.display ="none";
-     document.getElementById("payBillSection").style.display ="none";
-   document.getElementById("get-bonus-section").style.display ="block";
- })
+  document.getElementById("monySection").style.display = "none";
+  document.getElementById("casOutsection").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("payBillSection").style.display = "none";
+  document.getElementById("get-bonus-section").style.display = "block";
+});
 
 //  Taggole Menu--5
-document.getElementById('pay-bill')
- .addEventListener('click', function (e) {
+document.getElementById("pay-bill").addEventListener("click", function (e) {
   e.preventDefault();
-   document.getElementById("monySection").style.display = "none";
-   document.getElementById("casOutsection").style.display = "none";
-   document.getElementById("transfer-money").style.display ="none";
-   document.getElementById("get-bonus-section").style.display ="none";
-   document.getElementById("payBillSection").style.display ="block";
- })
+  document.getElementById("monySection").style.display = "none";
+  document.getElementById("casOutsection").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("get-bonus-section").style.display = "none";
+  document.getElementById("payBillSection").style.display = "block";
+});
