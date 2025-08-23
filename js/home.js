@@ -154,10 +154,13 @@ document
   .getElementById("add-mony-prent")
   .addEventListener("click", function () {
     document.getElementById("add-mony-prent").style.borderColor = "#0874F2";
+    
     document.getElementById("casOutsection").style.display = "none";
     document.getElementById("transfer-money").style.display = "none";
     document.getElementById("get-bonus-section").style.display = "none";
     document.getElementById("payBillSection").style.display = "none";
+            document.getElementById("Transactions").style.display = "none";
+
     document.getElementById("monySection").style.display = "block";
   });
 
@@ -170,6 +173,8 @@ document
     document.getElementById("monySection").style.display = "none";
     document.getElementById("get-bonus-section").style.display = "none";
     document.getElementById("payBillSection").style.display = "none";
+        document.getElementById("Transactions").style.display = "none";
+
     document.getElementById("casOutsection").style.display = "block";
   });
 
@@ -180,6 +185,8 @@ document.getElementById("transr-money").addEventListener("click", function (e) {
   document.getElementById("casOutsection").style.display = "none";
   document.getElementById("get-bonus-section").style.display = "none";
   document.getElementById("payBillSection").style.display = "none";
+      document.getElementById("Transactions").style.display = "none";
+
   document.getElementById("transfer-money").style.display = "block";
 });
 
@@ -190,6 +197,8 @@ document.getElementById("get-bonus").addEventListener("click", function (e) {
   document.getElementById("casOutsection").style.display = "none";
   document.getElementById("transfer-money").style.display = "none";
   document.getElementById("payBillSection").style.display = "none";
+      document.getElementById("Transactions").style.display = "none";
+
   document.getElementById("get-bonus-section").style.display = "block";
 });
 
@@ -200,5 +209,18 @@ document.getElementById("pay-bill").addEventListener("click", function (e) {
   document.getElementById("casOutsection").style.display = "none";
   document.getElementById("transfer-money").style.display = "none";
   document.getElementById("get-bonus-section").style.display = "none";
+    document.getElementById("Transactions").style.display = "none";
+
   document.getElementById("payBillSection").style.display = "block";
+});
+
+//  Taggole Menu--6
+document.getElementById("transactions").addEventListener("click", function (e) {
+  e.preventDefault();
+  document.getElementById("monySection").style.display = "none";
+  document.getElementById("casOutsection").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("get-bonus-section").style.display = "none";
+  document.getElementById("payBillSection").style.display = "none";
+  document.getElementById("Transactions").style.display = "block";
 });
