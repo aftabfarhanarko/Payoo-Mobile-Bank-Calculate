@@ -61,14 +61,59 @@ document
     document.getElementById("current-blance").innerText = withdrawTheAmmount;
   });
 
-//  Taggole Menu
+// Send-money-btn
+document.getElementById('Send-money-btn')
+.addEventListener('click', function (e) {
+  e.preventDefault();
+  let userpins = 1234;
+
+  let userInputValue = document.getElementById('user-account').value;
+
+  let sendMonyAmount = parseInt(document.getElementById('transfer-amount').value);
+  let transferPin = parseInt(document.getElementById('transfer-pin').value);
+
+  let blanceValues = parseInt(document.getElementById('current-blance').innerText);
+
+  let totalTransferMonet = blanceValues - sendMonyAmount;
+
+  if (userInputValue.length < 11) {
+      alert("Please Enter 11 Diget User Number");
+      return;
+    }
+
+    if (transferPin !== userpins) {
+      alert("Please Enter valid Transfer  Pin ");
+      return;
+    }
+  document.getElementById('current-blance').innerText = totalTransferMonet;
+
+})
+
+//  Taggole Menu--1
 document
   .getElementById("add-mony-prent")
   .addEventListener("click", function () {
     document.getElementById("casOutsection").style.display = "none";
+    document.getElementById("transfer-money").style.display = "none";
     document.getElementById("monySection").style.display = "block";
   });
+
+//  Taggole Menu--2
 document.getElementById("cas-out-prent").addEventListener("click", function () {
-  document.getElementById("monySection").style.display = "none";
-  document.getElementById("casOutsection").style.display = "block";
+  // document.getElementById("transfer-money").style.display = "none";
+  //   document.getElementById("get-bonus").style.display = "none";
+  //   document.getElementById("pay-bill").style.display = "none";
+  //   document.getElementById("transactions").style.display = "none";
+
+  document.getElementById("transfer-money").style.display = "none";
+     document.getElementById("monySection").style.display = "none";
+   document.getElementById("casOutsection").style.display = "block";
 });
+//  Taggole Menu--3
+document.getElementById('transr-money')
+ .addEventListener('click', function (e) {
+  e.preventDefault();
+   document.getElementById("monySection").style.display = "none";
+   document.getElementById("casOutsection").style.display = "none";
+   document.getElementById("transfer-money").style.display = "block";
+ })
