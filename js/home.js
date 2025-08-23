@@ -89,17 +89,47 @@ document.getElementById('Send-money-btn')
 
 })
 
+
+// Get-Coupone-btn
+document.getElementById('get-bonus-btn')
+.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  let couponValue = 1234567890;
+  let couponBunas = 5000;
+
+   let blanceCoupon = parseInt(document.getElementById('current-blance').innerText);
+
+  let cuarentinput = parseInt(document.getElementById('bonus-coupon').value);
+
+  let addesa = blanceCoupon + couponBunas;
+  if(cuarentinput === couponValue){
+    document.getElementById('current-blance').innerText = addesa;
+  }else{
+    alert('Your Coupon Number Not Valid');
+  }
+
+  // console.log(cuarentinput,blanceCoupon);
+})
+
+
+
+
 //  Taggole Menu--1
 document
   .getElementById("add-mony-prent")
   .addEventListener("click", function () {
+    document.getElementById('add-mony-prent').style.borderColor = "#0874F2";
     document.getElementById("casOutsection").style.display = "none";
     document.getElementById("transfer-money").style.display = "none";
+    document.getElementById("get-bonus-section").style.display ="none";
     document.getElementById("monySection").style.display = "block";
+
   });
 
 //  Taggole Menu--2
-document.getElementById("cas-out-prent").addEventListener("click", function () {
+document.getElementById("cas-out-prent").addEventListener("click", function (e) {
+  e.preventDefault();
   // document.getElementById("transfer-money").style.display = "none";
   //   document.getElementById("get-bonus").style.display = "none";
   //   document.getElementById("pay-bill").style.display = "none";
@@ -107,6 +137,7 @@ document.getElementById("cas-out-prent").addEventListener("click", function () {
 
   document.getElementById("transfer-money").style.display = "none";
      document.getElementById("monySection").style.display = "none";
+     document.getElementById("get-bonus-section").style.display ="none";
    document.getElementById("casOutsection").style.display = "block";
 });
 //  Taggole Menu--3
@@ -115,5 +146,15 @@ document.getElementById('transr-money')
   e.preventDefault();
    document.getElementById("monySection").style.display = "none";
    document.getElementById("casOutsection").style.display = "none";
-   document.getElementById("transfer-money").style.display = "block";
+   document.getElementById("get-bonus-section").style.display ="none";
+   document.getElementById("transfer-money").style.display ="block";
+ })
+//  Taggole Menu--4
+document.getElementById('get-bonus')
+ .addEventListener('click', function (e) {
+  e.preventDefault();
+   document.getElementById("monySection").style.display = "none";
+   document.getElementById("casOutsection").style.display = "none";
+   document.getElementById("transfer-money").style.display ="none";
+   document.getElementById("get-bonus-section").style.display ="block";
  })
