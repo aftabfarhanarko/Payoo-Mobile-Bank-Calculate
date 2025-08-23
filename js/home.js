@@ -1,7 +1,7 @@
 // Add Money Section
 document
   .getElementById("add-money-btn")
-  .addEventListener("click", function (e) {
+  .addEventListener("click", function (event) {
     e.preventDefault();
 
     let validPine = 1234;
@@ -131,7 +131,6 @@ document
     let billPinNumber = parseInt(document.getElementById("bill-pay-pin").value);
 
     if (billAccountNumber.length < 11 || billAccountNumber.length > 11) {
-      
       alert("Please Enter 11 Diget Account Number");
       return;
     }
@@ -152,15 +151,14 @@ document
 //  Taggole Menu--1
 document
   .getElementById("add-mony-prent")
-  .addEventListener("click", function () {
+  .addEventListener("click", function (event) {
     document.getElementById("add-mony-prent").style.borderColor = "#0874F2";
-    
+
     document.getElementById("casOutsection").style.display = "none";
     document.getElementById("transfer-money").style.display = "none";
     document.getElementById("get-bonus-section").style.display = "none";
     document.getElementById("payBillSection").style.display = "none";
-            document.getElementById("Transactions").style.display = "none";
-
+    document.getElementById("Transactions").style.display = "none";
     document.getElementById("monySection").style.display = "block";
   });
 
@@ -169,54 +167,60 @@ document
   .getElementById("cas-out-prent")
   .addEventListener("click", function (e) {
     e.preventDefault();
+    document.getElementById("cas-out-prent").style.borderColor = "#0874F2";
+
     document.getElementById("transfer-money").style.display = "none";
     document.getElementById("monySection").style.display = "none";
     document.getElementById("get-bonus-section").style.display = "none";
     document.getElementById("payBillSection").style.display = "none";
-        document.getElementById("Transactions").style.display = "none";
-
+    document.getElementById("Transactions").style.display = "none";
     document.getElementById("casOutsection").style.display = "block";
   });
 
 //  Taggole Menu--3
 document.getElementById("transr-money").addEventListener("click", function (e) {
   e.preventDefault();
+  document.getElementById("transr-money").style.borderColor = "#0874F2";
+
   document.getElementById("monySection").style.display = "none";
   document.getElementById("casOutsection").style.display = "none";
   document.getElementById("get-bonus-section").style.display = "none";
   document.getElementById("payBillSection").style.display = "none";
-      document.getElementById("Transactions").style.display = "none";
-
+  document.getElementById("Transactions").style.display = "none";
   document.getElementById("transfer-money").style.display = "block";
 });
 
 //  Taggole Menu--4
 document.getElementById("get-bonus").addEventListener("click", function (e) {
   e.preventDefault();
+  document.getElementById("get-bonus").style.borderColor = "#0874F2";
+
   document.getElementById("monySection").style.display = "none";
   document.getElementById("casOutsection").style.display = "none";
   document.getElementById("transfer-money").style.display = "none";
   document.getElementById("payBillSection").style.display = "none";
-      document.getElementById("Transactions").style.display = "none";
-
+  document.getElementById("Transactions").style.display = "none";
   document.getElementById("get-bonus-section").style.display = "block";
 });
 
 //  Taggole Menu--5
 document.getElementById("pay-bill").addEventListener("click", function (e) {
   e.preventDefault();
+  document.getElementById("pay-bill").style.borderColor = "#0874F2";
+
   document.getElementById("monySection").style.display = "none";
   document.getElementById("casOutsection").style.display = "none";
   document.getElementById("transfer-money").style.display = "none";
   document.getElementById("get-bonus-section").style.display = "none";
-    document.getElementById("Transactions").style.display = "none";
-
+  document.getElementById("Transactions").style.display = "none";
   document.getElementById("payBillSection").style.display = "block";
 });
 
 //  Taggole Menu--6
 document.getElementById("transactions").addEventListener("click", function (e) {
   e.preventDefault();
+  document.getElementById("transactions").style.borderColor = "#0874F2";
+
   document.getElementById("monySection").style.display = "none";
   document.getElementById("casOutsection").style.display = "none";
   document.getElementById("transfer-money").style.display = "none";
