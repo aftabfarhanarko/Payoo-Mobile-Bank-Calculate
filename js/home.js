@@ -148,83 +148,67 @@ document
     // console.log(totalPayBill);
   });
 
+// reyoujeabol functions
+
+function shorts(id) {
+  let forms = document.getElementsByClassName("form");
+  for (let form of forms) {
+    form.style.display = "none";
+  }
+  document.getElementById(id).style.display = "block";
+}
+
+// 2 reujibole Functions
+
+function myUse (colorcode) {
+const btnForm = document.getElementsByClassName('form-btns');
+    for(let btnsa of btnForm){
+      btnsa.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
+       btnsa.classList.add('border-gray-300')
+    }
+    document.getElementById(colorcode).classList.remove('border-gray-300');
+    document.getElementById(colorcode).classList.add('border-[#0874f2]', 'bg-[#0874f20d]');
+}
+
 //  Taggole Menu--1
 document
   .getElementById("add-mony-prent")
   .addEventListener("click", function (event) {
-    document.getElementById("add-mony-prent").style.borderColor = "#0874F2";
-
-    document.getElementById("casOutsection").style.display = "none";
-    document.getElementById("transfer-money").style.display = "none";
-    document.getElementById("get-bonus-section").style.display = "none";
-    document.getElementById("payBillSection").style.display = "none";
-    document.getElementById("Transactions").style.display = "none";
-    document.getElementById("monySection").style.display = "block";
+    shorts("monySection");
+    myUse ('add-mony-prent');
+    
   });
 
 //  Taggole Menu--2
-document
-  .getElementById("cas-out-prent")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    document.getElementById("cas-out-prent").style.borderColor = "#0874F2";
-
-    document.getElementById("transfer-money").style.display = "none";
-    document.getElementById("monySection").style.display = "none";
-    document.getElementById("get-bonus-section").style.display = "none";
-    document.getElementById("payBillSection").style.display = "none";
-    document.getElementById("Transactions").style.display = "none";
-    document.getElementById("casOutsection").style.display = "block";
-  });
+document.getElementById("cas-out-prent").addEventListener("click", function () {
+  shorts("casOutsection");
+ myUse ('cas-out-prent');
+});
 
 //  Taggole Menu--3
 document.getElementById("transr-money").addEventListener("click", function (e) {
   e.preventDefault();
-  document.getElementById("transr-money").style.borderColor = "#0874F2";
-
-  document.getElementById("monySection").style.display = "none";
-  document.getElementById("casOutsection").style.display = "none";
-  document.getElementById("get-bonus-section").style.display = "none";
-  document.getElementById("payBillSection").style.display = "none";
-  document.getElementById("Transactions").style.display = "none";
-  document.getElementById("transfer-money").style.display = "block";
+  shorts("transfer-money");
+  myUse ('transr-money');
 });
 
 //  Taggole Menu--4
 document.getElementById("get-bonus").addEventListener("click", function (e) {
   e.preventDefault();
-  document.getElementById("get-bonus").style.borderColor = "#0874F2";
-
-  document.getElementById("monySection").style.display = "none";
-  document.getElementById("casOutsection").style.display = "none";
-  document.getElementById("transfer-money").style.display = "none";
-  document.getElementById("payBillSection").style.display = "none";
-  document.getElementById("Transactions").style.display = "none";
-  document.getElementById("get-bonus-section").style.display = "block";
+  shorts("get-bonus-section");
+  myUse ('get-bonus');
 });
 
 //  Taggole Menu--5
 document.getElementById("pay-bill").addEventListener("click", function (e) {
   e.preventDefault();
-  document.getElementById("pay-bill").style.borderColor = "#0874F2";
-
-  document.getElementById("monySection").style.display = "none";
-  document.getElementById("casOutsection").style.display = "none";
-  document.getElementById("transfer-money").style.display = "none";
-  document.getElementById("get-bonus-section").style.display = "none";
-  document.getElementById("Transactions").style.display = "none";
-  document.getElementById("payBillSection").style.display = "block";
+  shorts("payBillSection");
+   myUse ('pay-bill');
 });
 
 //  Taggole Menu--6
 document.getElementById("transactions").addEventListener("click", function (e) {
   e.preventDefault();
-  document.getElementById("transactions").style.borderColor = "#0874F2";
-
-  document.getElementById("monySection").style.display = "none";
-  document.getElementById("casOutsection").style.display = "none";
-  document.getElementById("transfer-money").style.display = "none";
-  document.getElementById("get-bonus-section").style.display = "none";
-  document.getElementById("payBillSection").style.display = "none";
-  document.getElementById("Transactions").style.display = "block";
+  shorts("Transactions");
+   myUse ('transactions');
 });
