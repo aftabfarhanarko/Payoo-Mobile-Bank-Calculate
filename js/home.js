@@ -1,7 +1,7 @@
 // Add Money Section
 document
   .getElementById("add-money-btn")
-  .addEventListener("click", function (event) {
+  .addEventListener("click", function (e) {
     e.preventDefault();
 
     let validPine = 1234;
@@ -10,6 +10,7 @@ document
     const bankAccount = document.getElementById("bank-account").value;
 
     const addAmount = parseInt(document.getElementById("add-amount").value);
+    console.log(addAmount)
 
     const pinNumber = parseInt(document.getElementById("pin-number").value);
 
