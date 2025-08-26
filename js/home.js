@@ -1,3 +1,12 @@
+
+let transactionsData = [];
+
+// /resujibale Taggeole
+document.getElementById('Transactions').addEventListener('click', function () {
+   console.log('Clicked Trasitions BTn')
+})
+
+
 // Add Money Section
 document
   .getElementById("add-money-btn")
@@ -29,6 +38,12 @@ document
       return;
     }
     document.getElementById("current-blance").innerText = totalCurrentBlance;
+
+    const data = {
+      name : "Add Money",
+      date:new Date().toLocaleTimeString(),
+    }
+    transactionsData.push(data)
   });
 
 // CasOut Sections
@@ -60,6 +75,11 @@ document
       return;
     }
     document.getElementById("current-blance").innerText = withdrawTheAmmount;
+    const data = {
+      name : "Case Out",
+      date:new Date().toLocaleTimeString(),
+    }
+    transactionsData.push(data)
   });
 
 // Send-money-btn
@@ -92,6 +112,11 @@ document
       return;
     }
     document.getElementById("current-blance").innerText = totalTransferMonet;
+    const data = {
+      name : "Transfer Money",
+      date:new Date().toLocaleTimeString(),
+    }
+    transactionsData.push(data)
   });
 
 // Get-Coupone-btn
@@ -115,6 +140,11 @@ document
     } else {
       alert("Your Coupon Number Not Valid");
     }
+     const data = {
+      name : "Get Bonus",
+      date:new Date().toLocaleTimeString(),
+    }
+    transactionsData.push(data)
 
     // console.log(cuarentinput,blanceCoupon);
   });
@@ -146,8 +176,35 @@ document
 
     let totalPayBill = CurrentsValues - payBillesa;
     document.getElementById("current-blance").innerText = totalPayBill;
+     const data = {
+      name : "Pay Bill",
+      date:new Date().toLocaleTimeString(),
+    }
+    transactionsData.push(data)
+    console.log(data);
     // console.log(totalPayBill);
   });
+
+
+  // Transactions-Btn
+document
+  .getElementById("pay-biles-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    l
+    transactionsData.push(data)
+    console.log(data);
+    // console.log(totalPayBill);
+  });
+  
+  
+document.getElementById('transactions').addEventListener('click', function () {
+
+})
+
+
+
+
 
 // reyoujeabol functions
 
