@@ -198,7 +198,6 @@ document
   .addEventListener("click", function (e) {
     e.preventDefault();
     transactionsData.push(data);
-    console.log(data);
   });
 
 document
@@ -308,7 +307,6 @@ document
     e.preventDefault();
     shorts("transactionDIvAdd");
     myUse("transactions-btn");
-    console.log("This Find");
   });
 
 
