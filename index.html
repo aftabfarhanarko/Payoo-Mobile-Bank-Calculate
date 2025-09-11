@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payeo Mobile App</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Payeo Mobile App</title>
 
-    <!-- Tailwind CDN -->
-      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-      <link rel="stylesheet" href="./style/style.css">
+     <!-- Tailwind CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <link rel="stylesheet" href="./style/style.css">
 
-      <!-- Dasiy -->
-      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" href="./style/style.css">
+     <!-- Dasiy -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <link rel="stylesheet" href="./style/style.css">
 
-      <link rel="shortcut icon" href="./assets/Group.png" type="image/x-icon">
+     <link rel="shortcut icon" href="./assets/Group.png" type="image/x-icon">
 </head>
-<body class="flex flex-col  bg-[#e5e5ea] h-[100vh] justify-center items-center manrope-font">
-    <div class="h-[120px] w-[350px]    bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
-         <img src="./assets/Group.png" alt="">
-    </div>
 
-    <form class=" p-10  bg-[#FFFFFF] rounded-xl w-[350px]">
-         <div>
-              <label for="" class="font-semibold">Modile Number</label> <br>
-              <input id="mobile-number" class=" rounded-2xl p-2 mt-4 w-full  bg-[#ededed]" type="text" placeholder="modile number" class="input" />
-         </div>
-         <div class="mt-5">
-              <label for="" class="font-semibold " >4 Digit Pin</label> <br>
-              <input id="pin-number" class=" mt-4 rounded-2xl p-2 w-full  bg-[#e3e3e3]" type="text" placeholder="4 digit pin" class="input" />
-         </div>
-         <button type="button" id="loging-btn" class=" bg-[#0874f2] btn-primary mt-5 w-full rounded-2xl text-white font-semibold text-xl p-2 pb-3" >Loging</button>
-    </form>
-    
-    
-    <script src="./js/loging-form.js"></script>
+<body class="flex flex-col  bg-[#e5e5ea] h-[100vh] justify-center items-center manrope-font">
+     <div class="h-[120px] w-[350px]    bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+          <img src="./assets/Group.png" alt="">
+     </div>
+
+     <form class=" p-10  bg-[#FFFFFF] rounded-xl w-[350px]">
+          <div>
+               <label for="" class="font-semibold">Modile Number</label> <br>
+               <input id="mobile-number" class=" rounded-2xl p-2 mt-4 w-full  bg-[#ededed]" type="text"
+                    placeholder="modile number" class="input" />
+          </div>
+          <div class="mt-5">
+               <label for="" class="font-semibold ">4 Digit Pin</label> <br>
+               <input id="pin-number" class=" mt-4 rounded-2xl p-2 w-full  bg-[#e3e3e3]" type="text"
+                    placeholder="4 digit pin" class="input" />
+          </div>
+          <button type="button" id="loging-btn"
+               class=" bg-[#0874f2] btn-primary mt-5 w-full rounded-2xl text-white font-semibold text-xl p-2 pb-3">Loging</button>
+     </form>
+     <!-- Custom Alert -->
+
+
+
+     <script src="./js/loging-form.js"></script>
 </body>
+
 </html>

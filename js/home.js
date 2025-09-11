@@ -1,31 +1,40 @@
-
 let transactionsData = [];
-
 // /resujibale Taggeole
-document.getElementById('Transactions').addEventListener('click', function () {
-   console.log('Clicked Trasitions BTn')
-})
 
+// Sot Id Value Functions call
+function callIdValue(id) {
+  const my = document.getElementById(id).value;
+  return my;
+}
+
+// Short Money Prase Intjer
+function idPraseInt(mony) {
+  const copy = parseInt(document.getElementById(mony).value);
+  return copy;
+}
+
+// Short of Inner Text
+function innerTextid(inner) {
+  const courrentBlance = parseInt(document.getElementById(inner).innerText);
+  return courrentBlance;
+}
 
 // Add Money Section
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-
     let validPine = 1234;
-    const bankSectite = document.getElementById("bank-sectite").value;
+    const bankSectite = callIdValue("bank-sectite");
 
-    const bankAccount = document.getElementById("bank-account").value;
+    const bankAccount = callIdValue("bank-account");
 
-    const addAmount = parseInt(document.getElementById("add-amount").value);
-    console.log(addAmount)
+    const addAmount = idPraseInt("add-amount");
+    console.log(addAmount);
 
-    const pinNumber = parseInt(document.getElementById("pin-number").value);
+    const pinNumber = idPraseInt("pin-number");
 
-    const courrentBlance = parseInt(
-      document.getElementById("current-blance").innerText
-    );
+    const courrentBlance = innerTextid("current-blance");
 
     const totalCurrentBlance = addAmount + courrentBlance;
     if (bankAccount.length < 11) {
@@ -40,10 +49,12 @@ document
     document.getElementById("current-blance").innerText = totalCurrentBlance;
 
     const data = {
-      name : "Add Money",
-      date:new Date().toLocaleTimeString(),
-    }
-    transactionsData.push(data)
+      name: "Add Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionsData.push(data);
+
+    console.log(transactionsData);
   });
 
 // CasOut Sections
@@ -52,19 +63,12 @@ document
   .addEventListener("click", function (e) {
     e.preventDefault();
     let pinesns = 1234;
-    const agentNumber = document.getElementById("agent-account").value;
-    const withdrawAmoumt = parseInt(
-      document.getElementById("withdraw-amount").value
-    );
+    const agentNumber = callIdValue("agent-account");
+    const withdrawAmoumt = idPraseInt("withdraw-amount");
 
-    const withdrawPinNumber = parseInt(
-      document.getElementById("withdraw-pin").value
-    );
+    const withdrawPinNumber = idPraseInt("withdraw-pin");
 
-    let correntBleance = parseInt(
-      document.getElementById("current-blance").innerText
-    );
-
+    let correntBleance = innerTextid("current-blance");
     let withdrawTheAmmount = correntBleance - withdrawAmoumt;
     if (agentNumber.length < 11 || agentNumber.length > 11) {
       alert("Please Enter 11 Diget Bank Number");
@@ -76,10 +80,10 @@ document
     }
     document.getElementById("current-blance").innerText = withdrawTheAmmount;
     const data = {
-      name : "Case Out",
-      date:new Date().toLocaleTimeString(),
-    }
-    transactionsData.push(data)
+      name: "Case Out",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionsData.push(data);
   });
 
 // Send-money-btn
@@ -89,17 +93,12 @@ document
     e.preventDefault();
     let userpins = 1234;
 
-    let userInputValue = document.getElementById("user-account").value;
+    let userInputValue = callIdValue("user-account");
 
-    let sendMonyAmount = parseInt(
-      document.getElementById("transfer-amount").value
-    );
-    let transferPin = parseInt(document.getElementById("transfer-pin").value);
+    let sendMonyAmount = idPraseInt("transfer-amount");
+    let transferPin = idPraseInt("transfer-pin");
 
-    let blanceValues = parseInt(
-      document.getElementById("current-blance").innerText
-    );
-
+    let blanceValues = innerTextid("current-blance");
     let totalTransferMonet = blanceValues - sendMonyAmount;
 
     if (userInputValue.length < 11) {
@@ -113,10 +112,12 @@ document
     }
     document.getElementById("current-blance").innerText = totalTransferMonet;
     const data = {
-      name : "Transfer Money",
-      date:new Date().toLocaleTimeString(),
-    }
-    transactionsData.push(data)
+      name: "Transfer Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionsData.push(data);
+
+    console.log(transactionsData);
   });
 
 // Get-Coupone-btn
@@ -128,11 +129,9 @@ document
     let couponValue = 1234567890;
     let couponBunas = 5000;
 
-    let blanceCoupon = parseInt(
-      document.getElementById("current-blance").innerText
-    );
+    let blanceCoupon = innerTextid("current-blance");
 
-    let cuarentinput = parseInt(document.getElementById("bonus-coupon").value);
+    let cuarentinput = idPraseInt("bonus-coupon");
 
     let addesa = blanceCoupon + couponBunas;
     if (cuarentinput === couponValue) {
@@ -140,13 +139,13 @@ document
     } else {
       alert("Your Coupon Number Not Valid");
     }
-     const data = {
-      name : "Get Bonus",
-      date:new Date().toLocaleTimeString(),
-    }
-    transactionsData.push(data)
+    const data = {
+      name: "Get Bonus",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionsData.push(data);
 
-    // console.log(cuarentinput,blanceCoupon);
+    console.log(transactionsData);
   });
 
 // Pay Bill Event
@@ -155,11 +154,11 @@ document
   .addEventListener("click", function (e) {
     e.preventDefault();
     let pinesaBillPays = 1234;
-    let billAccountNumber = document.getElementById("bills-account").value;
+    let billAccountNumber = callIdValue("bills-account");
 
-    let payBillesa = parseInt(document.getElementById("pays-amount").value);
+    let payBillesa = idPraseInt("pays-amount");
 
-    let billPinNumber = parseInt(document.getElementById("bill-pay-pin").value);
+    let billPinNumber = idPraseInt("bill-pay-pin");
 
     if (billAccountNumber.length < 11 || billAccountNumber.length > 11) {
       alert("Please Enter 11 Diget Account Number");
@@ -170,44 +169,71 @@ document
       alert("Please Enter valid Pay Pin ");
       return;
     }
-    let CurrentsValues = parseInt(
-      document.getElementById("current-blance").innerText
-    );
+    let CurrentsValues = innerTextid("current-blance");
 
     let totalPayBill = CurrentsValues - payBillesa;
     document.getElementById("current-blance").innerText = totalPayBill;
-     const data = {
-      name : "Pay Bill",
-      date:new Date().toLocaleTimeString(),
-    }
-    transactionsData.push(data)
-    console.log(data);
-    // console.log(totalPayBill);
+
+    const data = {
+      name: "Pay Bill",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionsData.push(data);
+
+    console.log(transactionsData);
   });
 
-
-  // Transactions-Btn
+// Transactions-Btn
 document
   .getElementById("pay-biles-btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    l
     transactionsData.push(data)
     console.log(data);
-    // console.log(totalPayBill);
+    console.log(totalPayBill);
   });
-  
-  
-document.getElementById('transactions').addEventListener('click', function () {
 
-})
+document
+  .getElementById("transactions-btn")
+  .addEventListener("click", function () {
+    console.log(transactionsData);
+    const pushHTML =document.getElementById("transactionDIvAdd");
 
+    for(let data of transactionsData){
 
+      const creatDiv = document.createElement("div");
+      creatDiv.innerHTML = `
+         <div>
+                <div class="flex justify-between items-center">
+                    <h1 class="font-bold my-4 ml-2">Transaction History</h1>
+                    <p id="" class="text-[14px] text-gray-400 pr-5">View All</p>
+                </div>
+                <div class="  rounded-2xl p-1">
+                    <div
+                        class="mb-4 flex justify-between items-center border-1 border-gray-300 p-3 bg-[#FFFFFF] rounded-2xl shadow-black">
+                        <div class="flex gap-4 items-center">
+                            <div class=" p-3 rounded-full bg-[#0808080d]">
+                                <img src="./assets/wallet1.png" alt="">
+                            </div>
+                            <div>
+                                <h2 class="text-[18px] font-semibold">${data.name}</h2>
+                                <p class="text-[14px] text-gray-400">${data.date}</p>
+                            </div>
+                        </div>
+                        <div class="text-2xl">
+                            <i class="ri-more-2-fill"></i>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+      `
+      pushHTML.appendChild(creatDiv);
+    }
 
+  });
 
 // reyoujeabol functions
-
 function shorts(id) {
   let forms = document.getElementsByClassName("form");
   for (let form of forms) {
@@ -217,15 +243,28 @@ function shorts(id) {
 }
 
 // 2 reujibole Functions
+function myUse(colorcode) {
+  const btnForm = document.getElementsByClassName("form-btns");
+  for (let btnsa of btnForm) {
+    btnsa.classList.remove("border-[#0874f2]");
+    btnsa.classList.remove("border-2");
+    btnsa.classList.remove("bg-[#0874f20d]");
+    btnsa.classList.remove("text-blue-600");
+    btnsa.style.color = "";
 
-function myUse (colorcode) {
-const btnForm = document.getElementsByClassName('form-btns');
-    for(let btnsa of btnForm){
-      btnsa.classList.remove('border-[#0874f2]', 'bg-[#0874f20d]');
-       btnsa.classList.add('border-gray-300')
-    }
-    document.getElementById(colorcode).classList.remove('border-gray-300');
-    document.getElementById(colorcode).classList.add('border-[#0874f2]', 'bg-[#0874f20d]');
+    btnsa.classList.add("border-gray-300");
+  }
+  document.getElementById(colorcode).classList.remove("border-gray-300");
+
+  document
+    .getElementById(colorcode)
+    .classList.add(
+      "border-[#0874f2]",
+      "bg-[#0874f20d]",
+      "bg-[#0874f20d]",
+      "border-2"
+    );
+  document.getElementById(colorcode).style.color = "#0847F2";
 }
 
 //  Taggole Menu--1
@@ -233,40 +272,48 @@ document
   .getElementById("add-mony-prent")
   .addEventListener("click", function (event) {
     shorts("monySection");
-    myUse ('add-mony-prent');
-    
+    myUse("add-mony-prent");
   });
 
 //  Taggole Menu--2
 document.getElementById("cas-out-prent").addEventListener("click", function () {
   shorts("casOutsection");
- myUse ('cas-out-prent');
+  myUse("cas-out-prent");
 });
 
 //  Taggole Menu--3
 document.getElementById("transr-money").addEventListener("click", function (e) {
   e.preventDefault();
   shorts("transfer-money");
-  myUse ('transr-money');
+  myUse("transr-money");
 });
 
 //  Taggole Menu--4
 document.getElementById("get-bonus").addEventListener("click", function (e) {
   e.preventDefault();
   shorts("get-bonus-section");
-  myUse ('get-bonus');
+  myUse("get-bonus");
 });
 
 //  Taggole Menu--5
 document.getElementById("pay-bill").addEventListener("click", function (e) {
   e.preventDefault();
   shorts("payBillSection");
-   myUse ('pay-bill');
+  myUse("pay-bill");
 });
+// //  Taggole Menu--5
+// document.getElementById("transactions-btn").addEventListener("click", function (e) {
+//   e.preventDefault();
+//   shorts("transactionsCrad");
+//    myUse ("transactionsIds");
+// });
 
 //  Taggole Menu--6
 document.getElementById("transactions").addEventListener("click", function (e) {
   e.preventDefault();
   shorts("Transactions");
-   myUse ('transactions');
+  myUse("transactions");
+  console.log("This Find");
 });
+
+console.log(transactionsData);

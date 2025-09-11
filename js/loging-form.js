@@ -1,4 +1,12 @@
 
+function showAlert() {
+  document.getElementById("customAlert").classList.remove("hidden");
+}
+
+function closeAlert() {
+  document.getElementById("customAlert").classList.add("hidden");
+}
+
 // Loging Button
 document.getElementById('loging-btn')
 .addEventListener('click', function (e) {
@@ -24,7 +32,4 @@ document.getElementById('loging-btn')
       alert('Invalid Password');
     }
     
-
-    
-
-  })
+  });
