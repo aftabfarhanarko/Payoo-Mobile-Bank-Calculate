@@ -57,8 +57,6 @@ document
       date: new Date().toLocaleTimeString(),
     };
     transactionsData.push(data);
-
-    console.log(transactionsData);
   });
 
 // CasOut Sections
@@ -129,8 +127,6 @@ document
       date: new Date().toLocaleTimeString(),
     };
     transactionsData.push(data);
-
-    console.log(transactionsData);
   });
 
 // Get-Coupone-btn
@@ -157,8 +153,6 @@ document
       date: new Date().toLocaleTimeString(),
     };
     transactionsData.push(data);
-
-    console.log(transactionsData);
   });
 
 // Pay Bill Event
@@ -196,8 +190,6 @@ document
       date: new Date().toLocaleTimeString(),
     };
     transactionsData.push(data);
-
-    console.log(transactionsData);
   });
 
 // Transactions-Btn
@@ -319,4 +311,4 @@ document
     console.log("This Find");
   });
 
-console.log(transactionsData);
+
