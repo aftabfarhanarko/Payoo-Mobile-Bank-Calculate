@@ -30,7 +30,11 @@ document
     const bankAccount = callIdValue("bank-account");
 
     const addAmount = idPraseInt("add-amount");
-    console.log(addAmount);
+
+    if (addAmount <= 0) {
+      alert("Invalid Amount");
+      return;
+    }
 
     const pinNumber = idPraseInt("pin-number");
 
@@ -70,6 +74,10 @@ document
 
     let correntBleance = innerTextid("current-blance");
     let withdrawTheAmmount = correntBleance - withdrawAmoumt;
+    if (withdrawAmoumt <= 0 || withdrawAmoumt > correntBleance) {
+      alert("Invalid Blance");
+      return;
+    }
     if (agentNumber.length < 11 || agentNumber.length > 11) {
       alert("Please Enter 11 Diget Bank Number");
       return;
@@ -99,6 +107,11 @@ document
     let transferPin = idPraseInt("transfer-pin");
 
     let blanceValues = innerTextid("current-blance");
+
+    if (sendMonyAmount > blanceValues) {
+      alert("Invalid Blance");
+      return;
+    }
     let totalTransferMonet = blanceValues - sendMonyAmount;
 
     if (userInputValue.length < 11) {
@@ -169,9 +182,13 @@ document
       alert("Please Enter valid Pay Pin ");
       return;
     }
-    let CurrentsValues = innerTextid("current-blance");
+    let currentsValues = innerTextid("current-blance");
+    if (billAccountNumber > currentsValues) {
+      alert("Invalid Blance");
+      return;
+    }
 
-    let totalPayBill = CurrentsValues - payBillesa;
+    let totalPayBill = currentsValues - payBillesa;
     document.getElementById("current-blance").innerText = totalPayBill;
 
     const data = {
@@ -188,26 +205,18 @@ document
   .getElementById("pay-biles-btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    transactionsData.push(data)
+    transactionsData.push(data);
     console.log(data);
-    console.log(totalPayBill);
   });
 
 document
   .getElementById("transactions-btn")
   .addEventListener("click", function () {
-    console.log(transactionsData);
-    const pushHTML =document.getElementById("transactionDIvAdd");
-
-    for(let data of transactionsData){
-
+    const pushHTML = document.getElementById("transactionDIvAdd3");
+    pushHTML.innerText = "";
+    for (let data of transactionsData) {
       const creatDiv = document.createElement("div");
-      creatDiv.innerHTML = `
-         <div>
-                <div class="flex justify-between items-center">
-                    <h1 class="font-bold my-4 ml-2">Transaction History</h1>
-                    <p id="" class="text-[14px] text-gray-400 pr-5">View All</p>
-                </div>
+      creatDiv.innerHTML = `                
                 <div class="  rounded-2xl p-1">
                     <div
                         class="mb-4 flex justify-between items-center border-1 border-gray-300 p-3 bg-[#FFFFFF] rounded-2xl shadow-black">
@@ -226,11 +235,10 @@ document
                     </div>
 
                 </div>
-            </div>
-      `
+
+      `;
       pushHTML.appendChild(creatDiv);
     }
-
   });
 
 // reyoujeabol functions
@@ -301,19 +309,14 @@ document.getElementById("pay-bill").addEventListener("click", function (e) {
   shorts("payBillSection");
   myUse("pay-bill");
 });
-// //  Taggole Menu--5
-// document.getElementById("transactions-btn").addEventListener("click", function (e) {
-//   e.preventDefault();
-//   shorts("transactionsCrad");
-//    myUse ("transactionsIds");
-// });
-
 //  Taggole Menu--6
-document.getElementById("transactions").addEventListener("click", function (e) {
-  e.preventDefault();
-  shorts("Transactions");
-  myUse("transactions");
-  console.log("This Find");
-});
+document
+  .getElementById("transactions-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    shorts("transactionDIvAdd");
+    myUse("transactions-btn");
+    console.log("This Find");
+  });
 
 console.log(transactionsData);
